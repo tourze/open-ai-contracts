@@ -77,7 +77,9 @@ class Balance
     private static function extractArrayValue(array $data, string $key): ?array
     {
         if (isset($data[$key]) && is_array($data[$key])) {
-            return $data[$key];
+            /** @var array<string, mixed> $value */
+            $value = $data[$key];
+            return $value;
         }
 
         return null;
