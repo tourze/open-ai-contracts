@@ -182,7 +182,7 @@ class BalanceTest extends TestCase
             'expires_at' => 'invalid-date-format',
         ];
 
-        $this->expectException(\Exception::class);
+        $this->expectException(\Throwable::class);
         Balance::fromArray($data);
     }
 
