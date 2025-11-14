@@ -144,7 +144,64 @@ try {
 ## Requirements
 
 - PHP 8.2 or higher
-- tourze/enum-extra ^0.1
+- tourze/enum-extra ^1.0
+
+## Quality
+
+This package follows strict quality standards:
+
+- **Static Analysis**: Uses PHPStan for comprehensive static analysis
+- **Testing**: Full test coverage with PHPUnit
+- **Code Style**: Follows PSR-12 coding standards
+- **Type Safety**: Full type declarations and strict typing
+
+## Architecture
+
+### Request/Response Flow
+
+```
+Client Request → DTO Validation → Interface Contract → API Response → DTO Response
+```
+
+### Package Structure
+
+```
+src/
+├── Attribute/          # PHP Attributes for API compatibility
+├── Client/            # Client interfaces
+├── DTO/               # Data Transfer Objects
+├── Enum/              # Enumerations for constants
+├── Exception/         # Exception interfaces
+├── Request/           # Request interfaces
+└── Response/          # Response interfaces
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests and static analysis
+5. Commit your changes (`git commit -m 'Add some amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+## Development Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/tourze/php-monorepo.git
+cd php-monorepo/packages/open-ai-contracts
+
+# Install dependencies
+composer install
+
+# Run tests
+composer test
+
+# Run static analysis
+composer analyse
+```
 
 ## License
 
