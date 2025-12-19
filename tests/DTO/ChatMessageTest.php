@@ -39,7 +39,7 @@ class ChatMessageTest extends TestCase
             content: 'Function call response',
             name: 'weather_bot',
             functionCall: $functionCall,
-            toolCalls: $toolCalls // @phpstan-ignore-line
+            toolCalls: $toolCalls
         );
 
         $this->assertSame(Role::ASSISTANT, $message->getRole());
@@ -155,7 +155,7 @@ class ChatMessageTest extends TestCase
             content: 'Calculation result',
             name: 'math_assistant',
             functionCall: $functionCall,
-            toolCalls: $toolCalls // @phpstan-ignore-line
+            toolCalls: $toolCalls
         );
 
         $expected = [
@@ -271,7 +271,7 @@ class ChatMessageTest extends TestCase
         $message = new ChatMessage(
             role: Role::ASSISTANT,
             content: 'I will analyze the data for you.',
-            toolCalls: $complexToolCalls // @phpstan-ignore-line
+            toolCalls: $complexToolCalls
         );
 
         $this->assertSame($complexToolCalls, $message->getToolCalls());
@@ -292,7 +292,7 @@ class ChatMessageTest extends TestCase
             content: 'Function response content',
             name: 'test_function_name',
             functionCall: $functionCall,
-            toolCalls: $toolCalls // @phpstan-ignore-line
+            toolCalls: $toolCalls
         );
 
         $this->assertSame(Role::FUNCTION, $message->getRole());
